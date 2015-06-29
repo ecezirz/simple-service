@@ -49,6 +49,25 @@ public class IntegrationTest
 		assertThat(response, notNullValue());
 		assertThat(response.getStatusLine().getStatusCode(), CoreMatchers.is(200));
 	}
+	
+	@Test
+	public void testPositiveTwo() throws IOException
+	{
+		Executor executor = Executor.newInstance();
+		HttpResponse response = executor.execute(Request.Get("http://localhost:9111/system/system/v1/ping?input=abc")).returnResponse();
+		assertThat(response, notNullValue());
+		assertThat(response.getStatusLine().getStatusCode(), CoreMatchers.is(200));
+	}
+	
+	
+	@Test
+	public void testNegative() throws IOException
+	{
+		Executor executor = Executor.newInstance();
+		HttpResponse response = executor.execute(Request.Get("http://localhost:9111/system/system/v1/ping?input=cba")).returnResponse();
+		assertThat(response, notNullValue());
+		assertThat(response.getStatusLine().getStatusCode(), CoreMatchers.is(400));
+	}
 
 	@AfterClass
 	public static void afterClass() throws Exception
