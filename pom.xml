@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.sages</groupId>
-    <artifactId>simple-service</artifactId>
+    <artifactId>simple-rest-service</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <name>Simple Rest Service</name>
     <description>Simple Rest service</description>
