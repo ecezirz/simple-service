@@ -273,6 +273,17 @@
             </resource>
         </resources>
         <plugins>
+        	   <plugin>
+                <groupId>com.smartbear.soapui</groupId>
+                <artifactId>soapui-maven-plugin</artifactId>
+                <version>4.6.1</version>
+                <configuration>
+                    <projectFile>src/test/soapui/simple-service-soapui-project.xml</projectFile>
+                    <printReport>true</printReport>
+                    <outputFolder>target/soapui</outputFolder>
+                    <junitReport>true</junitReport>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -333,7 +344,12 @@
             </plugin>
         </plugins>
     </build>
-    
+     <pluginRepositories>
+        <pluginRepository>
+            <id>smartbear-sweden-plugin-repository</id>
+            <url>http://www.soapui.org/repository/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
     <reporting>
     <plugins>
     <plugin>
