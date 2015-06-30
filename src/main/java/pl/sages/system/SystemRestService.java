@@ -14,7 +14,7 @@ public class SystemRestService
 	@Autowired
 	private SystemManager systemManager;
 
-	//@SuppressWarnings("null")
+	@SuppressWarnings("null")
 	@GET
 	@Path(value = "/ping")
 	@Produces(MediaType.APPLICATION_JSON)
